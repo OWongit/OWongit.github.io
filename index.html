@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Owen Wilhere - Portfolio</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -255,6 +254,20 @@
 
         .project-image-item {
             margin-bottom: 30px;
+            position: relative;
+        }
+
+        .project-image-label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(102, 126, 234, 0.9);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            z-index: 10;
         }
 
         .project-image-item h4 {
@@ -333,11 +346,17 @@
             }
             
             .hero {
-                page-break-after: avoid;
+                display: none;
             }
             
             .project {
                 page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            
+            .project:not(:first-child) {
+                page-break-before: always;
+                break-before: page;
             }
         }
     </style>
@@ -351,9 +370,9 @@
             <p class="bio" id="bio">Passionate engineer with expertise in developing innovative solutions and bringing ideas to life through technology.</p>
             
             <div class="contact-info">
-                <span id="email">📧 <a href="mailto:your.email@example.com">your.email@example.com</a></span>
-                <span id="phone">📞 <a href="tel:+1234567890">+1 (234) 567-8900</a></span>
-                <span id="location">📍 Location, State</span>
+                <span id="email">📧 <a href="mailto:owenwilhere@gmail.com">owenwilhere@gmail.com</a></span>
+                <span id="phone">📞 <a href="tel:3605843938">(360) 584-3938</a></span>
+                <span id="location">📍 Seattle, WA</span>
             </div>
             
             <div class="social-links">
@@ -368,7 +387,7 @@
     <!-- Portfolio Section -->
     <section class="portfolio">
         <div class="container">
-            <h2>Engineering Projects</h2>
+            <h2>Projects</h2>
             
             <div id="portfolio-projects">
                 <!-- Projects will be dynamically generated here -->
@@ -389,6 +408,16 @@
             return 'grid-3'; // Default to 3 columns for many images
         }
 
+        // Convert number to lowercase letter (1 -> a, 2 -> b, etc.)
+        function numberToLetter(num) {
+            return String.fromCharCode(96 + num); // 97 is 'a' in ASCII
+        }
+
+        // Convert letter to number (a -> 1, b -> 2, etc.)
+        function letterToNumber(letter) {
+            return letter.charCodeAt(0) - 96;
+        }
+
         // Parse description text file
         function parseDescription(text) {
             const lines = text.split('\n');
@@ -401,17 +430,43 @@
                 const trimmedLine = line.trim();
                 if (!trimmedLine) return;
                 
-                // Check if line starts with "Image X:"
+                // Check if line starts with "Image X:" or "a:", "a.", "b:", "b.", etc.
                 const imageMatch = trimmedLine.match(/^Image\s+(\d+):\s*(.*)$/i);
+                const letterColonMatch = trimmedLine.match(/^([a-z]):\s*(.*)$/i);
+                const letterPeriodMatch = trimmedLine.match(/^([a-z])\.\s*(.*)$/i);
+                
                 if (imageMatch) {
-                    // Save previous image section if exists
+                    // Old format: "Image X:"
                     if (currentImageSection) {
                         imageSections.push(currentImageSection);
                     }
-                    // Start new image section
+                    const imageNum = parseInt(imageMatch[1]);
                     currentImageSection = {
-                        number: parseInt(imageMatch[1]),
+                        letter: numberToLetter(imageNum),
+                        number: imageNum,
                         description: imageMatch[2] || ''
+                    };
+                } else if (letterColonMatch) {
+                    // Format: "a:", "b:", etc.
+                    if (currentImageSection) {
+                        imageSections.push(currentImageSection);
+                    }
+                    const letter = letterColonMatch[1].toLowerCase();
+                    currentImageSection = {
+                        letter: letter,
+                        number: letterToNumber(letter),
+                        description: letterColonMatch[2] || ''
+                    };
+                } else if (letterPeriodMatch) {
+                    // Format: "a.", "b.", etc.
+                    if (currentImageSection) {
+                        imageSections.push(currentImageSection);
+                    }
+                    const letter = letterPeriodMatch[1].toLowerCase();
+                    currentImageSection = {
+                        letter: letter,
+                        number: letterToNumber(letter),
+                        description: letterPeriodMatch[2] || ''
                     };
                 } else if (currentImageSection) {
                     // Continue current image section
@@ -436,7 +491,6 @@
         // Load project data from folder structure
         async function loadProject(projectData) {
             const projectPath = `projects/${projectData.id}`;
-            const imageCount = projectData.imageCount || 4;
             
             // Load description text file
             let descriptionText = '';
@@ -452,13 +506,25 @@
                 console.error(`Error loading description for ${projectData.id}:`, error);
             }
 
-            // Generate image paths
+            // Generate image paths - support both new format (images array) and old format (imageCount)
             const images = [];
-            for (let i = 1; i <= imageCount; i++) {
-                images.push({
-                    src: `${projectPath}/image${i}.png`,
-                    alt: `${projectData.title} - Image ${i}`
+            if (projectData.images && Array.isArray(projectData.images)) {
+                // New format: explicit image filenames
+                projectData.images.forEach((imageName, index) => {
+                    images.push({
+                        src: `${projectPath}/${imageName}`,
+                        alt: `${projectData.title} - Image ${index + 1}`
+                    });
                 });
+            } else {
+                // Old format: numbered images (backward compatibility)
+                const imageCount = projectData.imageCount || 4;
+                for (let i = 1; i <= imageCount; i++) {
+                    images.push({
+                        src: `${projectPath}/image${i}.png`,
+                        alt: `${projectData.title} - Image ${i}`
+                    });
+                }
             }
 
             return {
@@ -498,8 +564,10 @@
 
                     let imagesHTML = '';
                     project.images.forEach((image, index) => {
+                        const letter = String.fromCharCode(97 + index); // 97 is 'a' in ASCII
                         imagesHTML += `
                             <div class="project-image-item">
+                                <div class="project-image-label">${letter}.</div>
                                 <img src="${image.src}" alt="${image.alt}" class="project-image" 
                                      onerror="this.src='https://via.placeholder.com/600x400/cccccc/666666?text=Image+${index + 1}+Not+Found'">
                             </div>
@@ -516,10 +584,11 @@
                             textContentHTML += `<p>${project.mainDescription.replace(/\n/g, '<br>')}</p>`;
                         }
                         
-                        // Image descriptions as bullet points
+                        // Image descriptions with letter labels
                         if (project.imageSections.length > 0) {
                             project.imageSections.forEach(imgSection => {
-                                textContentHTML += `<h4>Image ${imgSection.number}</h4>`;
+                                const letter = imgSection.letter || numberToLetter(imgSection.number);
+                                textContentHTML += `<h4>${letter}.</h4>`;
                                 textContentHTML += `<p>${imgSection.description}</p>`;
                             });
                         }
@@ -528,7 +597,12 @@
                     }
 
                     let githubLinkHTML = '';
-                    if (project.githubLink) {
+                    // Check if githubLink exists and is not null/empty
+                    const hasGithubLink = project.githubLink && 
+                                         project.githubLink !== null && 
+                                         project.githubLink !== 'null' && 
+                                         String(project.githubLink).trim() !== '';
+                    if (hasGithubLink) {
                         githubLinkHTML = `
                             <div class="project-links">
                                 <a href="${project.githubLink}" target="_blank" rel="noopener noreferrer">View on GitHub</a>
@@ -555,30 +629,15 @@
 
         // PDF Download Functionality
         function downloadPDF() {
-            const element = document.body;
-            const opt = {
-                margin: 1,
-                filename: 'Owen_Wilhere_Portfolio.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2, useCORS: true },
-                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-            };
-
-            // Show loading state
-            const button = event.target;
-            const originalText = button.textContent;
-            button.textContent = 'Generating PDF...';
-            button.disabled = true;
-
-            html2pdf().set(opt).from(element).save().then(() => {
-                button.textContent = originalText;
-                button.disabled = false;
-            }).catch(err => {
-                console.error('Error generating PDF:', err);
-                button.textContent = originalText;
-                button.disabled = false;
-                alert('Error generating PDF. Please try again.');
-            });
+            // Create a temporary anchor element to download the PDF file
+            const link = document.createElement('a');
+            link.href = 'owilhere_portfolio.pdf';
+            link.download = 'owilhere_portfolio.pdf';
+            
+            // Append to body, click, and remove
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
 
         // Initialize on page load

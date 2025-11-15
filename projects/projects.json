@@ -1,15 +1,35 @@
 [
     {
         "id": "project1",
-        "title": "Project 1: Example Engineering Project",
-        "githubLink": "https://github.com/OWongit/example-project",
-        "imageCount": 4
+        "title": "Relay Switch for Launch Controller",
+        "githubLink": "https://github.com/OWongit/Relay-Switch-for-Launch-Controller",
+        "images": [
+            "enclosure.JPG",
+            "RelaySwitch-Schematic.png",
+            "RelaySwitchCompact-PCB layout.png",
+            "3D_view.png"
+        ]
     },
     {
         "id": "project2",
-        "title": "Project 2: Another Engineering Project",
-        "githubLink": "https://github.com/OWongit/another-project",
-        "imageCount": 1
+        "title": "Real-Time Monitoring of Rocket Engine",
+        "githubLink": "",
+        "images": [
+            "architecture.png",
+            "labview_GUI.png",
+            "wire_harnessing.png",
+            "engine_fire.png"
+        ]
+    },
+    {
+        "id": "project3",
+        "title": "Improved DAQ System for Sensor Data",
+        "githubLink": "https://github.com/SARP-UW/GSE_pcb_design/tree/main/DAQ1.2",
+        "images": [
+            "DAQ schematic.png",
+            "DAQ_PCB.png",
+            "DAQ_3D_view.png"
+        ]
     }
 ]
 
