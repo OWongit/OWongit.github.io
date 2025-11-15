@@ -1,0 +1,15 @@
+[
+    {
+        "id": "project1",
+        "title": "Project 1: Example Engineering Project",
+        "githubLink": "https://github.com/OWongit/example-project",
+        "imageCount": 4
+    },
+    {
+        "id": "project2",
+        "title": "Project 2: Another Engineering Project",
+        "githubLink": "https://github.com/OWongit/another-project",
+        "imageCount": 1
+    }
+]
+

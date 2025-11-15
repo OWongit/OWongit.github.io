@@ -1,0 +1,8 @@
+A second engineering project showcasing different aspects of technical expertise. This project focused on optimization and performance improvements.
+
+Image 1: System architecture and component layout
+Image 2: Performance metrics and optimization results
+Image 3: User interface and interaction design
+Image 4: Integration testing and validation
+Image 5: Final deployment and monitoring dashboard
+
