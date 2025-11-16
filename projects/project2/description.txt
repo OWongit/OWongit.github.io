@@ -1,7 +1,0 @@
-Capture and visually present real-time data from a load cell and pressure transducer in a rocket engine through graphical representation.
-
-Image 1: Block diagram of the Data Acquisition (DAQ) system illustrates the signal flow within the National Instruments DAQ setup. The system captures high-resolution analog signals from an external load cell and pressure transducer, converting them into digital data for processing and analysis.
-Image 2: Real-time display implemented using NI LabVIEW, showcasing pressure, thrust, and temperature measurements. The system allows for toggling of signal filtering and provides an option to enable or disable data recording to an MS Excel spreadsheet.
-Image 3: Wire harnessing for system organization: The DAQ hardware receives sensor inputs and a DC power supply for sensor excitation, ensuring proper signal routing and electrical connectivity.
-Image 4: Image capturing the combustion process of the rocket engine during testing.
-

@@ -1,0 +1,6 @@
+High-voltage capacitor discharge test stand control system for applied pulsed power, integrating trigger and feedback hardware with LabVIEW.
+
+a. LabVIEW GUI displaying power supply voltage/current and three capacitor voltages, with a control panel on the left and usage history on the right. Revised an existing system by repurposing legacy feedback and control signals to drive new relay and ignitron switches based on updated requirements.
+b. Capacitor bank system with newly installed control hardware throughout, using a mix of pneumatic, electrical, and fiber-optic power and communication signals.
+c. Digital and analog capacitor voltage measurement boards, modified to be able to handle up to 48 kV in the new system and installed with clear labeling.
+d. Legacy test stand safety and control circuit; Made no hardware changes, but traced, diagrammed, and documented it to support integration of the LabVIEW software updates.

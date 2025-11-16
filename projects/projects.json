@@ -1,34 +1,94 @@
 [
     {
-        "id": "project1",
-        "title": "Relay Switch for Launch Controller",
-        "githubLink": "https://github.com/OWongit/Relay-Switch-for-Launch-Controller",
+        "id": "DAQ_Rev2",
+        "title": "Improved Data Acquisition System Rev 2",
+        "purpose": "Society for Advanced Rocket Propulsion",
+        "githubLink": "https://github.com/OWongit/DAQ_software",
         "images": [
-            "enclosure.JPG",
-            "RelaySwitch-Schematic.png",
-            "RelaySwitchCompact-PCB layout.png",
-            "3D_view.png"
+            "SCHEMATIC.png",
+            "LAYOUT.png",
+            "DAQ_3D_VIEW_FRONT.png",
+            "DAQ_3D_VIEW_BACK.png"
         ]
     },
     {
-        "id": "project2",
+        "id": "Zap_MTS",
+        "title": "High Voltage Capacitor Test Controller",
+        "purpose": "Zap Energy, Inc.",
+        "githubLink": "",
+        "images": [
+            "labVIEW_GUI.png",
+            "Bank Q.png",
+            "Bank Q HVMs.png",
+            "Bank Q Controls Circuit.png"
+        ]
+    },
+    {
+        "id": "DebugStream",
+        "purpose": "Zonar Systems, Inc.",
+        "title": "Debug Terminal for Telematics Control Unit",
+        "githubLink": "",
+        "images": [
+            "DebugStream_GUI.png",
+            "V4.png"
+        ]
+    },
+    {
+        "id": "relay_switch",
+        "title": "Valve Actuation Switch for Launch Controller",
+        "purpose": "Society for Advanced Rocket Propulsion",
+        "githubLink": "https://github.com/OWongit/Relay-Switch-for-Launch-Controller",
+        "images": [
+            "OLD_CONTROLLER.png",
+            "SCHEMATIC.png",
+            "LAYOUT.png",
+            "BACK_PIC.png"
+        ]
+    },
+    {
+        "id": "PolyBot",
+        "title": "Polymarket Quantitative Analysis Scanner",
+        "purpose": "Personal Project",
+        "githubLink": "https://github.com/OWongit/PolyBotScan",
+        "images": [
+            "BUY_LIST.png",
+            "SETTINGS.png",
+            "SHEET.png",
+            "CODE_SNIPPET.png"
+        ]
+    },    
+    {
+        "id": "SARP_LabVIEW",
+        "purpose": "Society for Advanced Rocket Propulsion",
         "title": "Real-Time Monitoring of Rocket Engine",
         "githubLink": "",
         "images": [
-            "architecture.png",
-            "labview_GUI.png",
-            "wire_harnessing.png",
-            "engine_fire.png"
+            "ARCHITECTURE.png",
+            "GUI.png",
+            "WIRES.png",
+            "ENGINE.png"
         ]
     },
     {
-        "id": "project3",
-        "title": "Improved DAQ System for Sensor Data",
-        "githubLink": "https://github.com/SARP-UW/GSE_pcb_design/tree/main/DAQ1.2",
+        "id": "Business_Card",
+        "purpose": "Personal Project",
+        "title": "PCB Business Card with NFC",
+        "githubLink": "",
         "images": [
-            "DAQ schematic.png",
-            "DAQ_PCB.png",
-            "DAQ_3D_view.png"
+            "SCHEMATIC.png",
+            "LAYOUT.png",
+            "FRONT.png",
+            "NFC.png"
+        ]
+    },
+    {
+        "id": "House_Cams",
+        "purpose": "Personal Project",
+        "title": "Custom RTSP Stream Viewer for Security Cameras",
+        "githubLink": "https://github.com/OWongit/House_Cams",
+        "images": [
+            "CAMS.png",
+            "MONITOR.png"
         ]
     }
 ]

@@ -14,8 +14,8 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
+            color: #c0caf5;
+            background-color: #1a1b26;
         }
 
         .container {
@@ -26,8 +26,8 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, #7aa2f7 0%, #bb9af7 100%);
+            color: #ffffff;
             padding: 80px 20px;
             text-align: center;
             margin-bottom: 60px;
@@ -69,7 +69,7 @@
         }
 
         .hero .contact-info a {
-            color: white;
+            color: #ffffff;
             text-decoration: none;
             opacity: 0.9;
             transition: opacity 0.3s;
@@ -88,23 +88,23 @@
         }
 
         .hero .social-links a {
-            color: white;
+            color: #ffffff;
             text-decoration: none;
             font-size: 1.1rem;
             padding: 10px 20px;
-            border: 2px solid white;
+            border: 2px solid #c0caf5;
             border-radius: 5px;
             transition: all 0.3s;
         }
 
         .hero .social-links a:hover {
-            background-color: white;
-            color: #667eea;
+            background-color: #c0caf5;
+            color: #1a1b26;
         }
 
         .hero .pdf-button {
-            background-color: white;
-            color: #667eea;
+            background-color: #c0caf5;
+            color: #1a1b26;
             border: none;
             padding: 12px 30px;
             font-size: 1rem;
@@ -117,7 +117,8 @@
 
         .hero .pdf-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            background-color: #a9b1d6;
         }
 
         /* Portfolio Section */
@@ -129,43 +130,67 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 50px;
-            color: #333;
+            color: #c0caf5;
         }
 
         .project {
-            background: white;
-            border-radius: 10px;
+            background: #24283b;
+            border-radius: 0;
             padding: 40px;
             margin-bottom: 50px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .project-title {
             font-size: 2rem;
-            margin-bottom: 15px;
-            color: #667eea;
+            margin-bottom: 5px;
+            color: #c0caf5;
+        }
+
+        .project-purpose {
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            color: #a9b1d6;
+            font-style: italic;
         }
 
         .project-description {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             margin-bottom: 30px;
-            color: #555;
+            color: #c0caf5;
             line-height: 1.8;
         }
 
         .project-text-content {
-            font-size: 1rem;
             margin-top: 30px;
-            color: #666;
+            color: #c0caf5;
             line-height: 1.8;
             white-space: pre-line;
         }
 
-        .project-text-content h4 {
-            color: #333;
-            margin-top: 20px;
-            margin-bottom: 10px;
+        .project-text-content .main-description {
             font-size: 1.1rem;
+            color: #c0caf5;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .project-text-content .image-list {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding-left: 1.5em;
+            list-style-type: lower-alpha;
+        }
+
+        .project-text-content .image-list li {
+            color: #c0caf5;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            padding-left: 0.5em;
+        }
+
+        .project-text-content .image-list li::marker {
+            font-weight: 600;
         }
 
         .project-text-content ul {
@@ -174,13 +199,14 @@
         }
 
         .project-text-content li {
+            margin-top: 20px;
             margin-bottom: 8px;
         }
 
         .project-gallery {
             display: grid;
             gap: 30px;
-            margin-bottom: 30px;
+            align-items: start;
         }
 
         .project-gallery.grid-1 {
@@ -247,24 +273,28 @@
 
         .project-image {
             width: 100%;
-            border-radius: 8px;
+            height: auto;
+            border-radius: 0;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 15px;
+            display: block;
         }
 
         .project-image-item {
             margin-bottom: 30px;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
         }
 
         .project-image-label {
             position: absolute;
-            top: 10px;
-            left: 10px;
-            background-color: rgba(102, 126, 234, 0.9);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
+            top: 0px;
+            left: 0px;
+            background-color: rgba(122, 162, 247, 0.7);
+            color: #1a1b26;
+            padding: 3px 8px;
+            border-radius: 0;
             font-weight: 600;
             font-size: 0.9rem;
             z-index: 10;
@@ -273,12 +303,12 @@
         .project-image-item h4 {
             font-size: 1.2rem;
             margin-bottom: 10px;
-            color: #333;
+            color: #c0caf5;
         }
 
         .project-image-item ul {
             list-style-position: inside;
-            color: #666;
+            color: #a9b1d6;
             line-height: 1.8;
         }
 
@@ -292,19 +322,19 @@
 
         .project-links a {
             display: inline-block;
-            color: #667eea;
+            color: #7aa2f7;
             text-decoration: none;
             font-weight: 600;
             margin-right: 20px;
             padding: 8px 16px;
-            border: 2px solid #667eea;
+            border: 2px solid #7aa2f7;
             border-radius: 5px;
             transition: all 0.3s;
         }
 
         .project-links a:hover {
-            background-color: #667eea;
-            color: white;
+            background-color: #7aa2f7;
+            color: #1a1b26;
         }
 
         /* Responsive Design */
@@ -366,8 +396,8 @@
     <section class="hero">
         <div class="container">
             <h1 id="name">Owen Wilhere</h1>
-            <p class="position" id="position">Engineering Professional</p>
-            <p class="bio" id="bio">Passionate engineer with expertise in developing innovative solutions and bringing ideas to life through technology.</p>
+            <p class="position" id="position">Electrical and Computer Engineering Student</p>
+            <p class="bio" id="bio">Emerging hardware engineer focused on PCB design and embedded software development.</p>
             
             <div class="contact-info">
                 <span id="email">📧 <a href="mailto:owenwilhere@gmail.com">owenwilhere@gmail.com</a></span>
@@ -387,8 +417,6 @@
     <!-- Portfolio Section -->
     <section class="portfolio">
         <div class="container">
-            <h2>Projects</h2>
-            
             <div id="portfolio-projects">
                 <!-- Projects will be dynamically generated here -->
             </div>
@@ -529,6 +557,7 @@
 
             return {
                 title: projectData.title,
+                purpose: projectData.purpose || '',
                 mainDescription: parsedDescription.mainDescription,
                 imageSections: parsedDescription.imageSections,
                 images: images,
@@ -581,16 +610,20 @@
                         
                         // Main description
                         if (project.mainDescription) {
-                            textContentHTML += `<p>${project.mainDescription.replace(/\n/g, '<br>')}</p>`;
+                            textContentHTML += `<p class="main-description">${project.mainDescription.replace(/\n/g, '<br>')}</p>`;
                         }
                         
-                        // Image descriptions with letter labels
+                        // Image descriptions as proper list items
                         if (project.imageSections.length > 0) {
+                            textContentHTML += '<ol class="image-list" type="a">';
                             project.imageSections.forEach(imgSection => {
-                                const letter = imgSection.letter || numberToLetter(imgSection.number);
-                                textContentHTML += `<h4>${letter}.</h4>`;
-                                textContentHTML += `<p>${imgSection.description}</p>`;
+                                // Remove the letter prefix if it exists in the description
+                                let description = imgSection.description.trim();
+                                // Remove patterns like "a. ", "b. " at the start
+                                description = description.replace(/^[a-z]\.\s*/i, '');
+                                textContentHTML += `<li>${description}</li>`;
                             });
+                            textContentHTML += '</ol>';
                         }
                         
                         textContentHTML += '</div>';
@@ -610,8 +643,14 @@
                         `;
                     }
 
+                    let purposeHTML = '';
+                    if (project.purpose) {
+                        purposeHTML = `<p class="project-purpose">${project.purpose}</p>`;
+                    }
+
                     projectDiv.innerHTML = `
                         <h3 class="project-title">${project.title}</h3>
+                        ${purposeHTML}
                         <div class="project-gallery ${gridClass}">
                             ${imagesHTML}
                         </div>

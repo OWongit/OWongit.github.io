@@ -1,0 +1,7 @@
+Custom DAQ board for RTDs, load cells, and pressure transducers. It powers the sensors, filters and digitizes their signals using dual 24-bit ADCs over SPI to a Raspberry Pi, logs and displays live data, and uses a custom low-noise power architecture for the ADCs, sensors, and Pi.
+
+
+a. Schematic shows analog sensor inputs brought in through three 15-position D-sub connectors, each line protected by a TVS diode for ESD and surge events. Signals are RC-filtered for noise reduction before reaching the ADC. The system is powered from 24 VDC, with power distributed via buck converters, LDOs, and voltage references to provide low-noise, high-accuracy rails and a high-current supply for the Raspberry Pi.
+b. PCB layout fits in under 10×10 cm to reduce manufacturing cost. RC filtering networks are placed close to the ADCs for optimal performance, and analog sensor traces are carefully routed to avoid crossing noisy lines and minimize interference. An array of thermal vias is implemented to facilitate efficient heat dissipation and establish electrical connectivity between the front and back ground planes.
+c. 3D front-side rendering shows the Raspberry Pi controller, the power distribution circuitry at the top, and the external connectors with TVS diode arrays along the right edge.
+d. 3D back-side rendering shows the ADCs with their associated analog and power RC filtering.
