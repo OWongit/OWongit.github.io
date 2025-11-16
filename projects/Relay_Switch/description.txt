@@ -1,6 +1,6 @@
-An engineering project showcasing different aspects of technical expertise. This project focused on optimization and performance improvements.
+Redesigned relay switch circuit to interface with a larger launch controller, enabling reliable high-voltage signal handling for precise valve actuation.
 
-a. System architecture and component layout
-b. Performance metrics and optimization results
-c. User interface and interaction design
-d. Integration testing and validation
+a. Existing launch controller system. The relay switch components, labeled 1 through 10, frequently experience failures or malfunctions. To address this issue, the redesign incorporates detachable relay modules, allowing for easier maintenance and replacement.
+b. Relay switch daughterboard schematic adds two LEDs, one indicating reception of the 5V control signal and another confirming the microcontroller input, for improved diagnostics and monitoring. The valve power line now includes an in-line fuse to protect the circuit against faults and overvoltage events.
+c. Two-layer daughterboard PCB layout keeps cost and size low, interfaces to the main board via a 5-pin connector, and mounts externally with a grounded through-hole for mechanical stability and grounding.
+d. Back side of fully assembled board, with clean solder joints and no visible cold joints.

@@ -17,7 +17,7 @@
         "purpose": "Zap Energy, Inc.",
         "githubLink": "",
         "images": [
-            "labVIEW_GUI.png",
+            "LabVIEW_GUI.png",
             "Bank Q.png",
             "Bank Q HVMs.png",
             "Bank Q Controls Circuit.png"
@@ -34,7 +34,7 @@
         ]
     },
     {
-        "id": "relay_switch",
+        "id": "Relay_Switch",
         "title": "Valve Actuation Switch for Launch Controller",
         "purpose": "Society for Advanced Rocket Propulsion",
         "githubLink": "https://github.com/OWongit/Relay-Switch-for-Launch-Controller",

@@ -1,6 +1,4 @@
-An engineering project showcasing different aspects of technical expertise. This project focused on optimization and performance improvements.
+Custom debug-terminal application that interfaces with a Telematics Control Unit (TCU) over RS-232 to issue commands, capture logs, and streamline QA and root-cause analysis.
 
-a. System architecture and component layout
-b. Performance metrics and optimization results
-c. User interface and interaction design
-d. Integration testing and validation
+a. Debug printouts can be enabled/disabled via a dropdown and “Toggle” button in the lower left, with a “Filter Debug” field for searching by type. Double-clicking “Clear” wipes the terminal to prevent accidental clears, and the right panel lists all enabled debugs, with reset disabling them all. The app is written in Python using serial communication and the FreeSimpleGUI library.
+b. Zonar V4 TCU under test, an embedded device used for large-scale asset tracking and fleet management.

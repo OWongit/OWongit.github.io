@@ -1,6 +1,4 @@
-An engineering project showcasing different aspects of technical expertise. This project focused on optimization and performance improvements.
+Python script that opens one or two RTSP/RTSPS video streams in a single fullscreen OpenCV window, used here for home surveillance.
 
-a. System architecture and component layout
-b. Performance metrics and optimization results
-c. User interface and interaction design
-d. Integration testing and validation
+a. Screen capture of the camera view, showing feeds with under 0.25 second latency.
+b. Script runs 24/7 on a Raspberry Pi as a low-cost alternative to Ubiquiti’s $200 Protect Viewport, saving roughly $140.

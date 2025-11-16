@@ -1,6 +1,6 @@
-An engineering project showcasing different aspects of technical expertise. This project focused on optimization and performance improvements.
+NFC-enabled business card that, when tapped with a smartphone, harvests energy from the phone’s field to send a LinkedIn URL, with surrounding circuitry driving LEDs as active communication indicators.
 
-a. System architecture and component layout
-b. Performance metrics and optimization results
-c. User interface and interaction design
-d. Integration testing and validation
+a. The NFC chip harvests energy from the phone’s field to generate VCC/VOUT, which drives a “phone detected” LED as a simple “powered by NFC” indicator. Its field-detect output controls a “read status” LED, illuminating only while NFC communication is active.
+b. Compact circuitry manages the NFC chip and LED behavior. No copper or components are placed inside the antenna loop to avoid degrading the RF signal.
+c. Photo of the business card.
+d. Photo of the business card function. 

@@ -1,6 +1,6 @@
-An engineering project showcasing different aspects of technical expertise. This project focused on optimization and performance improvements.
+Tool designed to analyze the 40 largest holders of a specified PolyMarket question. Constantly scanning through markets, it collects wallet data, performs analytics, and posts summarized results to a Discord channel and a Google sheet for real-time visibility.
 
-a. System architecture and component layout
-b. Performance metrics and optimization results
-c. User interface and interaction design
-d. Integration testing and validation
+a. Buy-alerts channel lists markets that meet “Buy” criteria, the side to trade, plus summary stats and insights.
+b. Setting channels allows user to change “Buy” search requirements.
+c. Google Sheet displays market data for easy viewing, using JavaScript in Google Apps Script to update live prices via the Polymarket API.
+d. Python code snippet showing Polymarket API integration, with a robust `_get` method and `get_market` helpers that fetch market data using a minimum volume filter and an offset index.
