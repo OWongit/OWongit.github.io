@@ -545,10 +545,12 @@
                 });
             } else {
                 // Old format: numbered images (backward compatibility)
+                // Supports both PNG and GIF files
                 const imageCount = projectData.imageCount || 4;
                 for (let i = 1; i <= imageCount; i++) {
                     images.push({
                         src: `${projectPath}/image${i}.png`,
+                        srcGif: `${projectPath}/image${i}.gif`,
                         alt: `${projectData.title} - Image ${i}`
                     });
                 }
@@ -593,11 +595,15 @@
                     let imagesHTML = '';
                     project.images.forEach((image, index) => {
                         const letter = String.fromCharCode(97 + index); // 97 is 'a' in ASCII
+                        // If srcGif exists (old format with both PNG and GIF), try PNG first, then GIF
+                        const errorHandler = image.srcGif 
+                            ? `this.onerror=null; this.src='${image.srcGif}';`
+                            : `this.src='https://via.placeholder.com/600x400/cccccc/666666?text=Image+${index + 1}+Not+Found';`;
                         imagesHTML += `
                             <div class="project-image-item">
                                 <div class="project-image-label">${letter}.</div>
                                 <img src="${image.src}" alt="${image.alt}" class="project-image" 
-                                     onerror="this.src='https://via.placeholder.com/600x400/cccccc/666666?text=Image+${index + 1}+Not+Found'">
+                                     onerror="${errorHandler}">
                             </div>
                         `;
                     });

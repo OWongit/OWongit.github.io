@@ -1,7 +1,7 @@
 [
     {
         "id": "DAQ_Rev2",
-        "title": "Improved Data Acquisition System Rev 2",
+        "title": "Improved Data Acquisition System Rev 2 - Hardware",
         "purpose": "Society for Advanced Rocket Propulsion",
         "githubLink": "https://github.com/OWongit/DAQ_software",
         "images": [
@@ -9,6 +9,16 @@
             "LAYOUT.png",
             "DAQ_3D_VIEW_FRONT.png",
             "DAQ_3D_VIEW_BACK.png"
+        ]
+    },
+    {
+        "id": "DAQ_GUI",
+        "title": "Improved Data Acquisition System Rev 2 - Software",
+        "purpose": "Society for Advanced Rocket Propulsion",
+        "githubLink": "https://github.com/OWongit/DAQ_software",
+        "images": [
+            "GUI.gif",
+            "GUI_FULL.png"
         ]
     },
     {
@@ -90,6 +100,13 @@
             "CAMS.png",
             "MONITOR.png"
         ]
+    },
+    {
+        "id": "portfolio",
+        "purpose": "Personal Project",
+        "title": "Portfolio (This Website)",
+        "githubLink": "https://github.com/OWongit/OWongit.github.io",
+        "images": []
     }
 ]
 
