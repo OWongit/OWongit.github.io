@@ -1,4 +1,4 @@
-Python script that opens one or two RTSP/RTSPS video streams in a single fullscreen OpenCV window, used here for home surveillance.
+A Python application that displays multiple UniFi Protect camera streams in a dynamic fullscreen Tkinter grid, featuring automatic camera discovery, RTSP stream management via the UniFi Protect API, and real-time motion highlighting driven by custom motion-detection webhooks.
 
-a. Screen capture of the camera view, showing feeds with under 0.25 second latency.
+a. Screen capture of the multi-camera grid during normal operation, showing sub-250 ms latency and smooth live feeds. When motion is detected, the GUI highlights the affected camera with a blue flashing border.
 b. Script runs 24/7 on a Raspberry Pi as a low-cost alternative to Ubiquiti’s $200 Protect Viewport, saving roughly $140.
